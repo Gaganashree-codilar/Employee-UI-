@@ -1,0 +1,21 @@
+<?php
+$brandcollection=$block->getProductCollection();
+sort($brandcollection);
+$brandcollection=array_filter($brandcollection,'strlen');
+$brandcollection=array_count_values($brandcollection);?>
+<html>
+    <body>
+        <table>
+            <tr>
+                <th>Brand Name</th>
+                <th>Count</th>
+            </tr>
+            <?php foreach($brandcollection as $key=>$val){?>
+                <tr>
+                    <td> <?php echo $key;?></td>
+                    <td><?php echo $val;?></td>
+                </tr>
+            <?php } ?>
+        </table>
+    </body>
+</html>
